@@ -19,4 +19,10 @@ package org.lessons.java.shop;
 
 public class Prodotto {
 
+    // caratteristiche
+    public int codice;
+    public String nome;
+    public String descrizione;
+    public double prezzo;
+    public double iva;
 }
