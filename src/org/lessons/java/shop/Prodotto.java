@@ -25,4 +25,13 @@ public class Prodotto {
     public String descrizione;
     public double prezzo;
     public double iva;
+
+    // costruttore
+    public Prodotto(String nome, String descrizione, double prezzo, double iva) {
+        this.codice = (int) (Math.random() * 10000); // codice random tra 0 e 9999
+        this.nome = nome;
+        this.descrizione = descrizione;
+        this.prezzo = prezzo;
+        this.iva = iva;
+    }
 }
