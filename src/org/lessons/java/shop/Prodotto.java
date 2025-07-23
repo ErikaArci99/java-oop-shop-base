@@ -34,4 +34,20 @@ public class Prodotto {
         this.prezzo = prezzo;
         this.iva = iva;
     }
+
+    // metodo per ottenere il prezzo base
+    public double getPrezzoBase() {
+        return this.prezzo;
+    }
+
+    // metodo per ottenere il prezzo comprensivo di iva
+    public double getPrezzoConIva() {
+        return this.prezzo + (this.prezzo * this.iva / 100);
+    }
+
+    // metodo per ottenere il nome esteso
+    public String getNomeEsteso() {
+        return this.codice + "-" + this.nome;
+    }
+
 }
