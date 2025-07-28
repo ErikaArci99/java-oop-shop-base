@@ -32,6 +32,8 @@
 
 package org.lessons.java.shop;
 
+import java.util.Random;
+
 public class Prodotto {
 
     // // caratteristiche
@@ -48,28 +50,100 @@ public class Prodotto {
     private double prezzo;
     private double iva;
 
-    // costruttore
-    public Prodotto(String nome, String descrizione, double prezzo, double iva) {
-        this.codice = (int) (Math.random() * 10000); // codice random tra 0 e 9999
+    // // costruttore
+    // public Prodotto(String nome, String descrizione, double prezzo, double iva) {
+    // this.codice = (int) (Math.random() * 10000); // codice random tra 0 e 9999
+    // this.nome = nome;
+    // this.descrizione = descrizione;
+    // this.prezzo = prezzo;
+    // this.iva = iva;
+    // }
+
+    // COSTRUTTORE 1 - con tutti i parametri
+    public Prodotto(String nome, String marca, double prezzo, double iva) {
+        this.codice = generaCodiceRandom();
         this.nome = nome;
-        this.descrizione = descrizione;
+        this.marca = marca;
         this.prezzo = prezzo;
         this.iva = iva;
     }
 
-    // metodo per ottenere il prezzo base
-    public double getPrezzoBase() {
-        return this.prezzo;
+    // COSTRUTTORE 2 - solo nome e marca, prezzo e iva default
+    public Prodotto(String nome, String marca) {
+        this.codice = generaCodiceRandom();
+        this.nome = nome;
+        this.marca = marca;
+        this.prezzo = 0.0;
+        this.iva = 22.0;
     }
 
-    // metodo per ottenere il prezzo comprensivo di iva
+    // GETTER (solo lettura per codice)
+    public int getCodice() {
+        return codice;
+    }
+
+    // GETTER e SETTER per gli altri campi
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public double getPrezzo() {
+        return prezzo;
+    }
+
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public double getIva() {
+        return iva;
+    }
+
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    // METODO UTILITY: prezzo con IVA
     public double getPrezzoConIva() {
-        return this.prezzo + (this.prezzo * this.iva / 100);
+        return prezzo + (prezzo * iva / 100);
     }
 
-    // metodo per ottenere il nome esteso
+    // METODO UTILITY: nome esteso
     public String getNomeEsteso() {
-        return this.codice + "-" + this.nome;
+        return codice + "-" + nome;
     }
+
+    // Metodo privato per generare codice random
+    private int generaCodiceRandom() {
+        Random rand = new Random();
+        return rand.nextInt(10000); // da 0 a 9999
+    }
+
+    // // metodo per ottenere il prezzo base
+    // public double getPrezzoBase() {
+    // return this.prezzo;
+    // }
+
+    // // metodo per ottenere il prezzo comprensivo di iva
+    // public double getPrezzoConIva() {
+    // return this.prezzo + (this.prezzo * this.iva / 100);
+    // }
+
+    // // metodo per ottenere il nome esteso
+    // public String getNomeEsteso() {
+    // return this.codice + "-" + this.nome;
+    // }
 
 }
