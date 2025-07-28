@@ -16,16 +16,37 @@
 // Nello stesso package aggiungete una classe Main con metodo main nella quale testate tutte le funzionalità della classe Prodotto.
 //ESERCIZIO TEMRINATO
 
+// Creare la classe Prodotto che gestisce i prodotti dello shop.
+
+// Un prodotto è caratterizzato da:
+// - codice (numero intero)
+// - nome
+// - marca
+// - prezzo
+// - iva
+
+// Usate opportunamente i livelli di accesso (public, private), i costruttori, i metodi getter e setter ed eventuali altri metodi di "utilità" per fare in modo che:
+// - esistano almeno due costruttori diversi
+// - il codice prodotto sia accessibile solo in lettura
+// - gli altri attributi siano accessibili sia in lettura che in scrittura
+
 package org.lessons.java.shop;
 
 public class Prodotto {
 
-    // caratteristiche
-    public int codice;
-    public String nome;
-    public String descrizione;
-    public double prezzo;
-    public double iva;
+    // // caratteristiche
+    // public int codice;
+    // public String nome;
+    // public String descrizione;
+    // public double prezzo;
+    // public double iva;
+
+    // attributi privati
+    private int codice;
+    private String nome;
+    private String marca;
+    private double prezzo;
+    private double iva;
 
     // costruttore
     public Prodotto(String nome, String descrizione, double prezzo, double iva) {
